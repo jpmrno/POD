@@ -4,11 +4,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>ar.edu.itba.pod</groupId>
-  <artifactId>p2e6</artifactId>
+  <artifactId>concurrency</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>p2e6</name>
+  <name>concurrency</name>
   <url>http://maven.apache.org</url>
 
   <properties>
