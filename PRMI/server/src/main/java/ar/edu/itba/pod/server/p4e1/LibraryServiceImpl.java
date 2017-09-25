@@ -1,7 +1,7 @@
-package ar.edu.itba.pod.server;
+package ar.edu.itba.pod.server.p4e1;
 
-import ar.edu.itba.pod.Book;
-import ar.edu.itba.pod.P4E1Service;
+import ar.edu.itba.pod.p4e1.Book;
+import ar.edu.itba.pod.p4e1.LibraryService;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -10,12 +10,12 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-public class P4E1ServiceImpl implements P4E1Service {
+public class LibraryServiceImpl implements LibraryService {
 
   private final List<Book> booksList;
   private final Map<Book, Integer> booksHoldings;
 
-  public P4E1ServiceImpl(final List<Book> booksList) {
+  public LibraryServiceImpl(final List<Book> booksList) {
     this.booksList = booksList.stream().distinct().collect(Collectors.toList());
     this.booksHoldings = new HashMap<>();
 
@@ -24,7 +24,7 @@ public class P4E1ServiceImpl implements P4E1Service {
     }
   }
 
-  public P4E1ServiceImpl(final Map<Book, Integer> booksHoldings) {
+  public LibraryServiceImpl(final Map<Book, Integer> booksHoldings) {
     this.booksList = new ArrayList<>(booksHoldings.keySet());
     this.booksHoldings = new HashMap<>(booksHoldings);
   }

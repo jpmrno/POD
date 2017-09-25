@@ -1,7 +1,7 @@
-package ar.edu.itba.pod.client;
+package ar.edu.itba.pod.client.p4e1;
 
-import ar.edu.itba.pod.Book;
-import ar.edu.itba.pod.P4E1Service;
+import ar.edu.itba.pod.p4e1.Book;
+import ar.edu.itba.pod.p4e1.LibraryService;
 import java.net.MalformedURLException;
 import java.rmi.Naming;
 import java.rmi.NotBoundException;
@@ -9,16 +9,16 @@ import java.rmi.RemoteException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class P4E1ClientMain {
+public class LibraryClientMain {
 
-  private static Logger logger = LoggerFactory.getLogger(P4E1ClientMain.class);
+  private static Logger logger = LoggerFactory.getLogger(LibraryClientMain.class);
 
   public static void main(final String[] args) {
     logger.info("P4E1 Client starting...");
 
-    P4E1Service service = null;
+    LibraryService service = null;
     try {
-      service = (P4E1Service) Naming.lookup("//localhost:1099/library");
+      service = (LibraryService) Naming.lookup("//localhost:1099/library");
     } catch (final NotBoundException | MalformedURLException | RemoteException exception) {
       logger.error("P4E1 Client failed to get service", exception);
       System.exit(1);

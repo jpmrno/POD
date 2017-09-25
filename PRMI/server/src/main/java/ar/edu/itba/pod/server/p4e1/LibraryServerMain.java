@@ -1,6 +1,6 @@
-package ar.edu.itba.pod.server;
+package ar.edu.itba.pod.server.p4e1;
 
-import ar.edu.itba.pod.Book;
+import ar.edu.itba.pod.p4e1.Book;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
@@ -12,9 +12,9 @@ import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class P4E1ServerMain {
+public class LibraryServerMain {
 
-  private static Logger logger = LoggerFactory.getLogger(P4E1ServerMain.class);
+  private static Logger logger = LoggerFactory.getLogger(LibraryServerMain.class);
 
   public static void main(final String[] args) {
     logger.info("P4E1 Server starting...");
@@ -37,7 +37,7 @@ public class P4E1ServerMain {
         new Book("978-0451210845", "The Gunslinger", "King Stephen", LocalDate.parse("2003-07-01")),
         2);
 
-    final P4E1ServiceImpl service = new P4E1ServiceImpl(bookHoldings);
+    final LibraryServiceImpl service = new LibraryServiceImpl(bookHoldings);
     Remote remoteService = null;
     try {
       remoteService = UnicastRemoteObject.exportObject(service, 0);

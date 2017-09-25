@@ -1,10 +1,10 @@
-package ar.edu.itba.pod;
+package ar.edu.itba.pod.p4e1;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.util.List;
 
-public interface P4E1Service extends Remote {
+public interface LibraryService extends Remote {
 
   List<Book> listBooks() throws RemoteException;
 
